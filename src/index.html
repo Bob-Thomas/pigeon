@@ -7,17 +7,25 @@
   <body>
     <div ui-view></div>
 
+    <!-- vendor -->
     <script src="/vendor/angular.min.js"></script>
     <script src="/vendor/angular-ui-router.min.js"></script>
 
+    <!-- app -->
     <script src="/app/app.module.js"></script>
     <script src="/app/app.routes.js"></script>
 
+    <!-- services -->
     <script src="/app/services/storage.service.js"></script>
     <script src="/app/services/user.service.js"></script>
+    <script src="/app/services/auth.service.js"></script>
 
+    <!-- Controllers -->
     <script src="/app/index/index.controller.js"></script>
     <script src="/app/signin/signin.controller.js"></script>
     <script src="/app/signout/signout.controller.js"></script>
+
+    <!-- Directives -->
+    <script src="/app/signout/signout.directive.js"></script>
   </body>
 </html>

@@ -1,4 +1,17 @@
-angular.module('pigeon').controller('SignoutController', function(StorageService, $state) {
-  StorageService.remove('token');
-  $state.go('signin');
-});
+(function() {
+	'use strict';
+
+	angular
+		.module('pigeon.controllers.signout', [])
+		.controller('SignoutController',signoutController);
+	
+	signoutController.$inject = ['AuthService'];
+
+	function signoutController(AuthService) {
+
+		this.signout = function() {
+			AuthService.signout();
+		}
+	}
+
+})();

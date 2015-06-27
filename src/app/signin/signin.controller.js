@@ -1,6 +1,15 @@
-angular.module('pigeon').controller('SigninController', function($scope, StorageService, $state) {
-  this.attempt = function() {
-    StorageService.set('token', 'foo');
-    $state.go('dashboard');
-  }
-});
+(function() {
+	'use strict';
+	
+	angular
+		.module('pigeon.controllers.signin', [])
+		.controller('SigninController',SigninController);
+
+	SigninController.$inject = ['$scope', '$state', 'AuthService'];
+
+	function SigninController($scope, $state, AuthService) {
+	  this.signin = function() {
+	  	AuthService.signin();
+	  }
+	}
+})();

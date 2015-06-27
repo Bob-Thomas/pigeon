@@ -1,17 +1,25 @@
-angular.module('pigeon').factory('StorageService', function() {
-  var factory = {};
+(function() {
+  'use strict';
 
-  factory.get = function(key) {
-    return window.localStorage[key];
-  }
+  angular
+    .module('pigeon.services.storage', [])
+    .factory('StorageService', storage)
 
-  factory.set = function(key, value) {
-    window.localStorage[key] = value;
-  }
+    function storage() {
+      var factory = {};
 
-  factory.remove = function(key) {
-    window.localStorage.removeItem(key);
-  }
+      factory.get = function(key) {
+        return window.localStorage[key];
+      }
 
-  return factory;
-});
+      factory.set = function(key, value) {
+        window.localStorage[key] = value;
+      }
+
+      factory.remove = function(key) {
+        window.localStorage.removeItem(key);
+      }
+
+      return factory;
+  };
+})();
