@@ -7,7 +7,8 @@ angular.module('pigeon').config(function($locationProvider, $stateProvider) {
   }).state('signin', {
     url: '/signin',
     templateUrl: '/app/signin/signin.html',
-    controller: 'SigninController'
+    controller: 'SigninController',
+    controllerAs: 'signinCtrl'
   }).state('dashboard', {
     url: '/dashboard',
     templateUrl: '/app/dashboard/dashboard.html'
